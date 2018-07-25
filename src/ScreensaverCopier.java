@@ -11,6 +11,8 @@ public class ScreensaverCopier {
         Path source = Paths.get(src);
         Path destination = Paths.get(dst);
 
+        if (Files.notExists(destination)) Files.createDirectory(destination);
+
         Files.walk(source)
                 .filter(s -> Files.isRegularFile(s))
                 .filter(s -> returnBig(s))
@@ -30,7 +32,7 @@ public class ScreensaverCopier {
 
     public static boolean returnBig (Path path) {
         try{
-        return Files.size(path) > 100000;}
+        return Files.size(path) > 105000;}
         catch (IOException e) {e.printStackTrace();}
         return true;
     }
