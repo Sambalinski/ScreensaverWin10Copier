@@ -32,7 +32,7 @@ public class ScreensaverCopier {
 
     public static boolean returnBig (Path path) {
         try{
-        return Files.size(path) > 105000;}
+        return Files.size(path) > 150000;}
         catch (IOException e) {e.printStackTrace();}
         return true;
     }
